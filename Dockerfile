@@ -1,4 +1,4 @@
-FROM container4armhf/armhf-alpine:3.4
+FROM hypriot/rpi-alpine-scratch:edge
 MAINTAINER feelingfree-me  <feelingfree.co.nr@gmail.com>
 
 RUN apk --update add  postgresql postgresql-contrib curl && \
