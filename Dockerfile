@@ -1,7 +1,7 @@
 FROM container4armhf/armhf-alpine:3.4
 MAINTAINER feelingfree-me  <feelingfree.co.nr@gmail.com>
 
-RUN apk --update add postgresql curl && \
+RUN apk --update add  postgresql postgresql-contrib curl && \
     apk del --purge curl && \
     rm -rf /var/cache/apk/*
 
