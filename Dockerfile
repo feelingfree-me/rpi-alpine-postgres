@@ -1,10 +1,10 @@
 FROM hypriot/rpi-alpine-scratch:edge
-MAINTAINER feelingfree-me  <feelingfree.co.nr@gmail.com>
+MAINTAINER feelingfree-me <feelingfree.co.nr@gmail.com>
 
-RUN apk --update add  postgresql postgresql-contrib curl && \
-    curl -o /usr/local/bin/gosu -sSL "https://github.com/tianon/gosu/releases/download/1.9/gosu-armhf" && \
+ADD https://github.com/tianon/gosu/releases/download/1.9/gosu-armhf /usr/local/bin/gosu
+
+RUN apk --update add  postgresql postgresql-contrib && \
     chmod +x /usr/local/bin/gosu && \
-    apk del --purge curl && \
     rm -rf /var/cache/apk/*
 
 ENV LANG en_US.utf8
